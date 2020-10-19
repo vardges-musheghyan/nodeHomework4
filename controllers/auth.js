@@ -29,6 +29,9 @@ exports.login = async function(req,res,next) {
         const token = await login(user);
         res.status(200).json({success: true, data: {token}})
     }catch (e) {
-        console.log(e, 'login error');
+        res.status(500).json({
+            success: false,
+            message: 'internal server error'
+        })
     }
 };

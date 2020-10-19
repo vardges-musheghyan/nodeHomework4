@@ -86,7 +86,6 @@ exports.deleteUser = async function (req, res, next) {
                 message: e.message
             })
         }
-        console.log(e);
         return res.status(500).json({
             success: false,
             message: 'internal server error'
